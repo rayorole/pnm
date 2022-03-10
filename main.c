@@ -3,8 +3,6 @@
 #include <string.h>
 #include <unistd.h>
 
-uid_t geteuid();
-
 int main(int argc, char *argv[]) {
 
   if (argc == 2) {
