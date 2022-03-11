@@ -31,7 +31,13 @@ int main(int argc, char *argv[]) {
             "restart php-fpm");
         printf("[*] Succesfully restarted MySQL, PHP and nginx");
       }
-    } else if (0 == strcmp(argv[1], "help")) {
+    }
+
+    else if (0 == strcmp(argv[1], "version")) {
+      printf("pnm: v.1.0.3");
+    }
+
+    else if (0 == strcmp(argv[1], "help")) {
       printf("   >=== PNM is created by Ray Orolé ===< \n\n");
       printf("   start          Start Nginx, PHP and MySQL services \n");
       printf("   restart        Restart Nginx, PHP and MySQL services \n");
