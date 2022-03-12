@@ -33,12 +33,28 @@ int main(int argc, char *argv[]) {
       }
     }
 
+    else if (0 == strcmp(argv[1], "install")) {
+      if (geteuid() != 0) {
+        printf("error: you have no root priviliges, use pnm with sudo instead");
+      } else {
+        char mysql_user[100];
+
+        printf("[*] Installing MySQL, PHP and nginx services \n");
+
+        printf("Enter a mysql database username: ");
+        scanf("%s", mysql_user);
+        printf("%s", mysql_user);
+      }
+    }
+
     else if (0 == strcmp(argv[1], "version")) {
       printf("pnm: v.1.0.3");
     }
 
     else if (0 == strcmp(argv[1], "help")) {
-      printf("   >=== PNM is created by Ray Orolé ===< \n\n");
+      printf("   >=== Made with ❤️ by Ray Orolé ===< \n\n");
+      printf("   install        Install and configure Nginx, PHP and MySQL "
+             "techstack \n");
       printf("   start          Start Nginx, PHP and MySQL services \n");
       printf("   restart        Restart Nginx, PHP and MySQL services \n");
       printf("   stop           Terminate Nginx, PHP and MySQL services \n\n");
@@ -50,7 +66,9 @@ int main(int argc, char *argv[]) {
   } else if (argc > 2) {
     printf("Too many arguments supplied. See 'pnm help'\n");
   } else {
-    printf("   >=== PNM is created by Ray Orolé ===< \n\n");
+    printf("   >=== Made with ❤️ by Ray Orolé ===< \n\n");
+    printf("   install        Install and configure Nginx, PHP and MySQL "
+           "techstack \n");
     printf("   start          Start Nginx, PHP and MySQL services \n");
     printf("   restart        Restart Nginx, PHP and MySQL services \n");
     printf("   stop           Terminate Nginx, PHP and MySQL services \n\n");
